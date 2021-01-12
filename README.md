@@ -203,5 +203,5 @@ memasukan syntax dibawah ini.
         akhir = round((float(tugas) * 0.3)+(float(uts) * 0.35)+(float(uas) * 0.35),2)
         i.write('\nNama : '+nama+'|Nim : '+str(nim)+'|Tugas : '+str(tugas)+'|UTS : '+str(uts)+'|UAS : '+str(uas)+"|Akhir : "+str(akhir)+'\n')
         i.close()
-		
-		
+
+![screen 3](/gambar/screen3.png)
