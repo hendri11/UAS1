@@ -204,4 +204,4 @@ memasukan syntax dibawah ini.
         i.write('\nNama : '+nama+'|Nim : '+str(nim)+'|Tugas : '+str(tugas)+'|UTS : '+str(uts)+'|UAS : '+str(uas)+"|Akhir : "+str(akhir)+'\n')
         i.close()
 
-![screen 3](/gambar/screen3.png)
+![screen 3](/gambar/screen3.jpg)
