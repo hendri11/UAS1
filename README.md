@@ -212,76 +212,20 @@ untuk menambahkan data.
 
 Kedua untuk menghasilkan modul Ubah Data kamu perlu memasukan syntax dibawah ini.
 
- elif c.lower() == 'u':
-        u = open('database.txt','r').read().splitlines()
-        target = input(' Masukan Nama : ')
-        nm = []
-        for l in u:
-            if l == '':
-                pass
-            else:
-                l1 = l.replace('Nama : ','').replace('Nim : ','').replace('Tugas : ','').replace('UTS : ','').replace('UAS : ','').replace('Akhir : ','')
-                na,ni,tu,uts,uas,akhir = l1.strip().split('|')
-                if na == target:
-                    P(' Mengedit Data %s'%(target))
-                    while (True):
-                        nama = input(" Nama : ")
-                        if nama == '':
-                            P(' Masukan dengan Nama Dengan Benar')
-                        else:
-                            break
-                    while (True):
-                        try:
-                            nim  = int(input(" NIM  : "))
-                            if nim == '':
-                                P(' Masukan Nim dengan Angka')
-                        except ValueError:
-                            P(' Masukan Nim dengan Angka')
-                        else:
-                            break
-                    while (True):
-                        try:
-                            tugas  = int(input(" TUGAS  : "))
-                            if tugas == '':
-                                P(' Masukan TUGAS dengan Angka')
-                        except ValueError:
-                            P(' Masukan TUGAS dengan Angka')
-                        else:
-                            break
-                    while (True):
-                        try:
-                            uts  = int(input(" UTS  : "))
-                            if uts == '':
-                                P(' Masukan UTS dengan Angka')
-                        except ValueError:
-                            P(' Masukan UTS dengan Angka')
-                        else:
-                            break
-                    while (True):
-                        try:
-                            uas  = int(input(" UAS  : "))
-                            if uas == '':
-                                P(' Masukan UAS dengan Angka')
-                        except ValueError:
-                            P(' Masukan UAS dengan Angka')
-                        else:
-                            break
-                    akhir = round((float(tugas) * 0.3)+(float(uts) * 0.35)+(float(uas) * 0.35),2)
-                    edit  =('Nama : '+nama+'|Nim : '+str(nim)+'|Tugas : '+str(tugas)+'|UTS : '+str(uts)+'|UAS : '+str(uas)+"|Akhir : "+str(akhir)+'\n')
-                    nm.append(edit+'\n')
-                else:
-                    nm.append(str(l)+'\n')
-        new = open('database.txt','w')
-        new.write(str(nm))
-        new.close()
-        new = open('database.txt','r').read().splitlines()
-        new1 = open('database.txt','w')
-        new1.close()
-        new2 = open('database.txt','a')
-        for i in new:
-            i2 = i.replace("['","").replace("\\n', '", "\n").replace("']","").replace("\\n","\n")
-            new2.write(i2+'\n')
-        new2.close()
+     elif c.lower() == 'u':
+        print('=======Ubah Data Mahasiswa=======')
+        nama = input('Nama                :  ')
+        if nama in data.keys():
+            nim     =input('Nim                 :  ')
+            tugas   =int(input("masukan nilai tugas :  "))
+            uts     =int(input("masukan nilai uts   :  "))
+            uas     =int(input("masukan nilai uas   :  "))
+            akhir   =(0.30 * tugas) + (0.35 * uts) + (0.35 * uas)
+            data[nama] = nim, tugas, uts, uas, akhir
+        else:
+            print("Data Nilai Tidak Ada".format(nama))
+        print("=================================")
+
 	
 Jadi kesimpulannya jika kalian menggunakan semua syntax yang saya tunjukan diawal dan memasukan 'U' pada
 kolom yang tersedia dan kalian run, maka akan mendapat output seperti dibawah ini, yang dimana itu adalah hasil
